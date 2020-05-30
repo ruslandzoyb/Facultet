@@ -102,5 +102,27 @@ namespace University
             }
         }
 
+
+        public static Person FindByFIO(string name ,string surname,Department department)
+        {
+            var s = department.Students.Where(x => x.Name == name && x.Surname == surname).FirstOrDefault();
+            if (s!=null)
+            {
+                return s;
+            }
+            else
+            {
+                var t = department.Teachers.Where(x => x.Name == name && x.Surname == surname).FirstOrDefault();
+                if (t!=null)
+                {
+                    return t;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+        }
+
     }
 }

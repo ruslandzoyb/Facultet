@@ -143,5 +143,14 @@ namespace University
             throw new Exception();
         }
 
+        public static void OrderByCourses(IEnumerable<Student> students)
+        {
+            var st = students.OrderBy(x => x.Group);
+            foreach (Student item in st)
+            {
+                Console.WriteLine($"{item.Name}  {item.Surname} {item.Group} {item.Course}");
+            }
+        }
+
     }
 }

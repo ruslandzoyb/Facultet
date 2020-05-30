@@ -23,5 +23,14 @@ namespace University
                 facultet = null;
             }
         }
+
+        public static void UpdateFacultet(Facultet facultet, Facultet[] facultets)
+        {
+            var f = facultets.Where(x => x.Name ==facultet.Name).SingleOrDefault();
+            if (f!=null)
+            {
+                f = facultet;
+            }
+        }
     }
 }

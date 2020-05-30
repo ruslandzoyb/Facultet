@@ -32,5 +32,29 @@ namespace University
                 f = facultet;
             }
         }
+
+        public static Department CreateDepartment(string name)
+        {
+            return new Department() { Name = name };
+        }
+
+        public static void DeleteDepartment(Department[] departments, string dep_name)
+        {
+            var department = departments.Where(x => x.Name == dep_name).SingleOrDefault();
+            if (department != null)
+            {
+                department = null;
+            }
+        }
+
+        public static void UpdateDepartment(Department department, Department[] departments)
+        {
+            var d = departments.Where(x => x.Name == department.Name).SingleOrDefault();
+            if (d != null)
+            {
+                d = department;
+            }
+        }
+
     }
 }

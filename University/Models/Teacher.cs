@@ -4,9 +4,7 @@ using System.Text;
 
 namespace University.Models
 {
-  public  class Student:Person
+   public class Teacher:Person
     {
-        public string Group { get; set; }
-
     }
 }

@@ -145,11 +145,31 @@ namespace University
 
         public static void OrderByCourses(IEnumerable<Student> students)
         {
-            var st = students.OrderBy(x => x.Group);
+            var st = students.OrderBy(x => x.Course);
             foreach (Student item in st)
             {
                 Console.WriteLine($"{item.Name}  {item.Surname} {item.Group} {item.Course}");
             }
+        }
+
+        public static void DisplayByAlphabet(IEnumerable<Person> persons)
+        {
+            var p = persons.OrderBy(x => x.Name).ThenBy(x => x.Surname);
+            foreach (Person item in p)
+            {
+                Console.WriteLine($"{item.Name}  {item.Surname} ");
+            }
+        }
+
+
+        public static void OrderByCoursesFromDep(Department department)
+        {
+            var d = department.Students.OrderBy(x=>x.Course);
+            foreach (Student item in d)
+            {
+                Console.WriteLine($"{item.Name}  {item.Surname} {item.Group} {item.Course}");
+            }
+
         }
 
     }

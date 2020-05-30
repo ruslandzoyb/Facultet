@@ -7,5 +7,6 @@ namespace University.Models
    public class Facultet
     {
         public string Name { get; set; }
+        
     }
 }

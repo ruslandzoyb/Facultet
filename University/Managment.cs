@@ -56,5 +56,18 @@ namespace University
             }
         }
 
+        public static void AddPersonToDepartment(Person person,Department department)
+        {
+            if (person is Student)
+            {
+                department.Students.Add((Student)person);
+
+            }
+            if (person is Teacher)
+            {
+                department.Teachers.Add((Teacher)person);
+            }
+        }
+
     }
 }

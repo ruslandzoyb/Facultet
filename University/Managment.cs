@@ -124,5 +124,24 @@ namespace University
             }
         }
 
+       public static Student FindByGroup(string group,Department department) {
+            var st = department.Students.Where(x => x.Group == group).FirstOrDefault();
+            if (st!=null)
+            {
+                return st;
+            }
+            throw new Exception();
+        }
+
+        public static Student FindByCourse(int course, Department department)
+        {
+            var st = department.Students.Where(x => x.Course == course).FirstOrDefault();
+            if (st != null)
+            {
+                return st;
+            }
+            throw new Exception();
+        }
+
     }
 }

@@ -7,6 +7,7 @@ namespace University.Models
   public  class Student:Person
     {
         public string Group { get; set; }
+        public int Course { get; set; }
 
     }
 }

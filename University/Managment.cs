@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using University.Models;
 
@@ -67,6 +68,21 @@ namespace University
             {
                 department.Teachers.Add((Teacher)person);
             }
+        }
+
+        public static void RemovePersonFromDepartment(Person person ,Department department)
+        {
+            var st = department.Students.Where(x => x.Name == person.Name && x.Surname == person.Surname && x.Group == ((Student)person).Group).FirstOrDefault();
+           var  t= department.Teachers.Where(x => x.Name == person.Name && x.Surname == person.Surname && x.Subject == ((Teacher)person).Subject).FirstOrDefault();
+            if (st!=null)
+            {
+                department.Students.Remove(st);
+            }
+            if (t != null)
+            {
+                department.Teachers.Remove(t);
+            }
+
         }
 
     }

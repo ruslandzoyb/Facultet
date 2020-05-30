@@ -85,5 +85,22 @@ namespace University
 
         }
 
+        public static void UpdatePersonFromDepartment(Person person,Department department)
+        {
+            var st = department.Students.Where(x => x.Name == person.Name && x.Surname == person.Surname && x.Group == ((Student)person).Group).FirstOrDefault();
+            var t = department.Teachers.Where(x => x.Name == person.Name && x.Surname == person.Surname && x.Subject == ((Teacher)person).Subject).FirstOrDefault();
+
+            if (st!=null)
+            {
+                st = (Student)person
+;            }
+
+            if (t != null)
+            {
+                t = (Teacher)person
+;
+            }
+        }
+
     }
 }
